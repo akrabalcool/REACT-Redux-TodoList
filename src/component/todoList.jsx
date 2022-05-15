@@ -32,7 +32,8 @@ export function TodoList(props){
 
     }
     const ajouter = ()=>{
-        dispach(addTask(newTask))
+        dispach(addTask(newTask));
+        setTask("")
     };
     return(
         <Center>
@@ -46,7 +47,7 @@ export function TodoList(props){
                     </Text>
                     
                     <Text mt={4}>
-                        <Input onChange={handleTask} placeholder='ajouter une tache ' />
+                        <Input onChange={handleTask} value={newTask} placeholder='ajouter une tache ' />
                         <Button onClick={()=>{ajouter()}} variant='outline' colorScheme='blue'>ajouter</Button>
                     </Text>
 
